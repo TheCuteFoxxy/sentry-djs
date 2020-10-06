@@ -8,7 +8,7 @@
     <a href="https://www.npmjs.com/package/sentry-djs"><img src="https://img.shields.io/npm/v/sentry-djs" alt="NPM version" /></a>
     <a href="https://www.npmjs.com/package/sentry-djs"><img src="https://img.shields.io/npm/dt/sentry-djs" alt="NPM downloads" /></a>
     <a href="https://github.com/TheCuteFoxxy/sentry-djs/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/sentry-djs" alt="License" /></a>
-    <a href="https://discord.gg/ArQ2puK"><img src="https://img.shields.io/discord/763079551470665758" alt="Discord" /></a>
+    <a href="https://discord.gg/ArQ2puK"><img src="https://img.shields.io/discord/763079551470665758?label=Discord" alt="Discord" /></a>
     <a href="https://sentrybot.xyz"><img src="https://img.shields.io/website?down_color=Red&down_message=Offline&up_color=Green&up_message=Online&url=https%3A%2F%2Fsentrybot.xyz" alt="Website" /></a>
   </p>
   <p>
