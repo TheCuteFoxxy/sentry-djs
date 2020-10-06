@@ -93,6 +93,6 @@ client.login('token');
 If you don't understand something, you are experiencing problems, or you just need a gentle
 nudge in the right direction, please don't hesitate to join our official [Sentry-djs Server](https://discord.gg/ArQ2puK).
 
-## Help
+## Disclaimer
 
 Sentry-djs is a modified version of Discord.js to support preffered changes and flexibility between the v11 and v12 changes.
