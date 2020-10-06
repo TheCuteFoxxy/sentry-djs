@@ -12,7 +12,7 @@
     <a href="https://sentrybot.xyz"><img src="https://img.shields.io/website?down_color=Red&down_message=Offline&up_color=Green&up_message=Online&url=https%3A%2F%2Fsentrybot.xyz" alt="Website" /></a>
   </p>
   <p>
-    <a href="https://nodei.co/npm/discord.js/"><img src="https://nodei.co/npm/discord.js.png?downloads=true&stars=true" alt="npm installnfo" /></a>
+    <a href="https://nodei.co/npm/sentry-djs/"><img src="https://nodei.co/npm/sentry-djs.png?downloads=true&downloadRank=true&stars=true"></a>
   </p>
 </div>
 
