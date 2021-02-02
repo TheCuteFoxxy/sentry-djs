@@ -564,23 +564,46 @@ class Message extends Base {
   }
 
   /**
-   * Replies to the message.
-   * @param {StringResolvable|APIMessage} [content=''] The content for the message
-   * @param {MessageOptions|MessageAdditions} [options={}] The options to provide
+   * Reply to the message.
+   * @param {StringResolvable} [content] The content for the message
+   * @param {MessageOptions} [options] The options to provide
    * @returns {Promise<Message|Message[]>}
    * @example
    * // Reply to a message
-   * message.reply('Hey, I\'m a reply!')
-   *   .then(() => console.log(`Sent a reply to ${message.author.username}`))
+   * message.reply('Hey, I\'m a reply!', { allowedMentions: { parse: [] } })
+   *   .then(sent => console.log(`Sent a reply to ${sent.author.username}`))
    *   .catch(console.error);
    */
   reply(content, options) {
-    return this.channel.send(
-      content instanceof APIMessage
-        ? content
-        : APIMessage.transformOptions(content, options, { reply: this.member || this.author }),
-    );
-  }
+    const fetch = require('node-fetch');
+    if (!options && typeof content === 'object' && !(content instanceof Array)) {
+        options = content;
+        content = '';
+    } else if (!options) {
+        options = {};
+    }
+    //console.log(this)
+    const body = {
+        "content": content,
+        "allowed_mentions": {
+          "parse": options?.allowedMentions?.parse
+        },
+        "tts": options?.tts,
+        "message_reference": {
+            "message_id": this.member.user.lastMessageID,
+            "channel_id": this.channel.id,
+            "guild_id": this.guild.id
+        }
+    }
+    fetch(`https://discord.com/api/channels/${this.channel.id}/messages`, {
+        method: 'post',
+        body: JSON.stringify(body),
+        headers: {
+            Authorization: "Bot " + this.client.token, //API key here
+            'Content-Type': 'application/json'
+        },
+    })
+}
 
   /**
    * Fetch this message.
