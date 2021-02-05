@@ -582,9 +582,9 @@ class Message extends Base {
     } else if (!options) {
         options = {};
     }
-    //console.log(this)
     const body = {
         "content": content,
+        "embed": (this.embed.length == 0 || this.embed == null || this.embed == undefined) ? options?.embed : this.embed,
         "allowed_mentions": {
           "parse": options?.allowedMentions?.parse
         },
