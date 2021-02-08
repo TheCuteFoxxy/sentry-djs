@@ -584,7 +584,7 @@ class Message extends Base {
     }
     const body = {
         "content": content,
-        "embed": (this.embed.length == 0 || this.embed == null || this.embed == undefined) ? options?.embed : this.embed,
+        "embed": (this.embeds == null || this.embeds == undefined || this.embeds.length == 0 ) ? options?.embed : this.embeds,
         "allowed_mentions": {
           "parse": options?.allowedMentions?.parse
         },
